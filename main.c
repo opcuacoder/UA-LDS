@@ -221,6 +221,7 @@ int main(int argc, char* argv[])
     /* initialize logger with correct settings */
     ualds_openlog(logtarget, loglevel);
 
+#if 0 //
     if (install == 1) {
 #ifdef HAVE_SERVICE_REGISTER
 		/* force an unregister first	*/
@@ -278,6 +279,9 @@ int main(int argc, char* argv[])
         }
         ualds_log(UALDS_LOG_NOTICE, "Terminating with exitcode=%i", ret);
     }
+#endif
+	
+	ret = run();
 
     ualds_closelog();
     ualds_platform_cleanup();
